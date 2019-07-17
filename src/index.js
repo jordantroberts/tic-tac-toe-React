@@ -8,9 +8,16 @@ import './index.css';
 // The Game component renders a board with placeholder values.
 
 class Square extends React.Component {
+  constructor(props) {
+    super(props);
+    // in JS classes, you need to call super when defining a constructor of a subclass.
+    this.state = {
+      value: null,
+    };
+  }
   render() {
     return (
-      <button className="square">
+      <button className="square" onClick={() => alert('click') }>
         { this.props.value }
       </button>
     );
