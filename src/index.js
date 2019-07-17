@@ -2,11 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+// We have 3 React components: Square, Board and Game.
+// The Square component renders a single <button>.
+// The Board component renders 9 squares.
+// The Game component renders a board with placeholder values.
+
 class Square extends React.Component {
   render() {
     return (
       <button className="square">
-        {/* TODO */}
+        { this.props.value }
       </button>
     );
   }
@@ -14,7 +19,7 @@ class Square extends React.Component {
 
 class Board extends React.Component {
   renderSquare(i) {
-    return <Square />;
+    return <Square value={i} />;
   }
 
   render() {
