@@ -31,6 +31,9 @@ class Board extends React.Component {
     // we call .slice to create a copy of the squares array to modify instead of modifying the existing array.
     // this is so we do not mutate the data directly.
     // Avoiding direct data mutation lets us keep previous versions of the game’s history intact, and reuse them later.
+    if(calculateWinner(squares) || squares[i]) {
+      return;
+    }
     squares[i] = this.state.xIsNext? 'X' : 'O';
     this.setState({
       squares: squares,
